@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.acronymmeaning.example.model.Lf" />
+
+    </data>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/tv_full_name_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_alignParentTop="true"
+            android:text="Long Form: "
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_full_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="@{model.lf}"
+            android:layout_toEndOf="@id/tv_full_name_text"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_since_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_full_name"
+            android:text="Since: " />
+
+        <TextView
+            android:id="@+id/tv_since_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{Integer.toString(model.since)}"
+            android:layout_below="@id/tv_full_name"
+            android:layout_toEndOf="@id/tv_since_text"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+</layout>
